@@ -24,4 +24,5 @@ Users — one to many →  user_followers
 Users — one to many → user_followings
 
 
-### Aarti's paragraph (Recitation 9/23/22)
+### Aarti's comment (Recitation 9/23/22)
+
