@@ -3,7 +3,7 @@ Our product is a social networking website that allows users to rate, review and
 ## Link to your Trello 
 https://trello.com/w/cosi166bteam7/home
 ## Preliminary idea of what each teammate is interested in working on
-Brain: Frontend
+Brian: Frontend
 Aarti: Backend
 Zixin: Frontend
 Mahmoud: Backend
@@ -22,3 +22,6 @@ Post — one to many → Post_comments
 Users — one to many → User_ratings
 Users — one to many →  user_followers
 Users — one to many → user_followings 
+
+
+### Aarti's paragraph (Recitation 9/23/22)
