@@ -7,7 +7,7 @@ ruby "3.1.2"
 gem "rails", "~> 7.0.4"
 gem "bootstrap-sass",  "3.4.1"
 
-gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'seeding'
+gem 'faker'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
