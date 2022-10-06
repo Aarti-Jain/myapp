@@ -9,54 +9,32 @@
 require 'faker'
 
 
-users = []
 for i in 0..50 do
-    n = Faker::Name.name
-    e = Faker::Internet.email
-    a = Faker::Number.number(digits: 2)
-    id = Faker::Number.number(digits: 3)
-
-    b = [n, e, a, id]
-    users[i] = b
+    user_name = Faker::Name.name
+    user_age = Faker::Number.number(digits: 2)
+    user_email = Faker::Internet.email 
+    User.new(name:user_name, age:user_age, email:user_email).save
 end
 
-
-posts = []
 for i in 0..50 do
-    uid = Faker::Number.number(digits: 3) #user id
-    pid = Faker::Number.number(digits: 3) #post id
-    rid = Faker::Number.number(digits: 3) #restaurant id
-    rating = Faker::Number.number(digits: 1)
-    likes = Faker::Number.number(digits: 3)
-
-    b = [pid, uid, rid, rating, likes]
-    posts[i] = b
+    restaurant_name = Faker::Restaurant.name
+    restaurant_location = Faker::WorldCup.city
+    restaurant_price_range =Faker::Number.number(digits: 2)
+    Restaurant.new(name:restaurant_name,location:restaurant_location,price_range:restaurant_price_range).save
 end
 
-#print posts
-
-comments = []
 for i in 0..50 do
-    uid = Faker::Number.number(digits: 3)
-    pid = Faker::Number.number(digits: 3)
-    comment = Faker::Restaurant.review
-
-    b = [pid, uid, comment]
-    comments[i] = b
+    post_user_id = User.all.sample(1)[0].id
+    post_restaurant_id = Restaurant.all.sample(1)[0].id
+    post_rating = Faker::Number.number(digits: 1)
+    post_likes_count = Faker::Number.number(digits: 3)
+    Post.new(user_id:post_user_id, restaurant_id:post_restaurant_id, 
+                   rating:post_rating, likes_count:post_likes_count).save
 end
 
-#print comments
-
-restaurants = []
 for i in 0..50 do
-    rid = Faker::Number.number(digits: 3)
-    name = Faker::Restaurant.name
-    location = Faker::WorldCup.city
-    lower_range = Faker::Number.number(digits: 2)
-    upper_range = Faker::Number.number(digits: 3)
-
-    b = [rid, name, location, lower_range, upper_range]
-    restaurants[i] = b
+    comment_post_id = Post.all.sample(1)[0].id
+    comment_user_id = User.all.sample(1)[0].id
+    comment_content = Faker::Restaurant.name
+    Comment.new(post_id:comment_post_id,user_id:comment_user_id,content:comment_content).save
 end
-
-print restaurants
