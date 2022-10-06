@@ -13,7 +13,8 @@ for i in 0..50 do
     user_name = Faker::Name.name
     user_age = Faker::Number.number(digits: 2)
     user_email = Faker::Internet.email 
-    User.new(name:user_name, age:user_age, email:user_email).save
+    user_bio = Faker::Name.name
+    User.new(name:user_name, age:user_age, email:user_email, bio: user_bio).save
 end
 
 for i in 0..50 do
@@ -26,10 +27,8 @@ end
 for i in 0..50 do
     post_user_id = User.all.sample(1)[0].id
     post_restaurant_id = Restaurant.all.sample(1)[0].id
-    post_rating = Faker::Number.number(digits: 1)
-    post_likes_count = Faker::Number.number(digits: 3)
-    Post.new(user_id:post_user_id, restaurant_id:post_restaurant_id, 
-                   rating:post_rating, likes_count:post_likes_count).save
+    post_content = Faker::Restaurant.name
+    Post.new(user_id:post_user_id, restaurant_id:post_restaurant_id, content: post_content).save
 end
 
 for i in 0..50 do
