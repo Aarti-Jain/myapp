@@ -1,2 +1,37 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+/* header */
+
+#logo {
+    float: left;
+    padding-top: 5px;
+  }
+
+.container-fluid { 
+    padding-top: 100px; 
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+div.home-left{
+    padding-top: 100px; 
+    padding-bottom: 100px; 
+}
+
+div.home-right{
+    padding-top: 150px; 
+    padding-bottom: 100px; 
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+    border: 1px solid #bbb;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+input {
+    height: auto !important;
+  }
