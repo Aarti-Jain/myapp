@@ -1,5 +1,15 @@
-<div class="center jumbotron">
-  <h1>Welcome to Kiwi-Be-Friends</h1>
-
-<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+<div class="container-fluid row">
+  <div class="col-md-8 home-left">
+    <%= image_tag "logo.png", width: "400", class: "center-block" %>
+  </div>  
+  <div class="col-md-4 home-right">
+    <%= form_with(url: about_path, scope: :session) do |f| %>
+      <%= f.email_field :email, class: "form-control", placeholder: "Enter email"%>
+      <%= f.password_field :password, class: "form-control", placeholder: "Enter password"%>
+      <%= f.submit "Log in", class: "btn btn-warning btn-large btn-block btn-primary"%>
+    <% end %>
+    <hr/>
+    <%= button_to "Sign up", signup_path, id: "open-contacts-dialog-btn",
+      class: "btn btn-success btn-large btn-block btn-primary", method: "get" %>
+  </div>
 </div>
